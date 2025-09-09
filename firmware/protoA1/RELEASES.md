@@ -1,8 +1,15 @@
+RELEASE 0.2.2
+- Primera versión Alpha de pruebas
+- Versión firmada digitalmente.
+- Primeras versiones de script para automatizar compilacion y firma.
 
+
+RELEASE 0.2.1
+- Cambios menores.
+- Primitivas para funciones de firma
 
 
 Release 0.2.0
-- Firmware versión 0.2.0
 - Se añade modo debug para que muestre todo o nada por consola
 - Se añaden iconos visuales al modo debug
 - Se añade suscripción de atributos compartidos tanto de gateway como de dispositivos
