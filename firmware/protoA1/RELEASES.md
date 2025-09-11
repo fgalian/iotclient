@@ -1,3 +1,9 @@
+RELEASE 0.2.3
+- Primitiva que calcula curva de disparo
+- Se añade funcion setRAW para enviar comandos en bruto a un cliente
+- Se eliminan funciones no usadas y se optimiza el código
+
+
 RELEASE 0.2.2
 - Primera versión Alpha de pruebas
 - Versión firmada digitalmente.
