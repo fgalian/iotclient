@@ -1,3 +1,11 @@
+RELEASE 0.3.0
+- Cambios en el sistema de suscripcion para que se detecte que no hay conexion
+- Se añade el nombre del ESP
+- Se añade token a prefs
+- Se divide el trabajo en 2 tareas principales que corren en nucleos distintos. Una tarea lee el bus y la otra tarea envía los datos al broker.
+- Se añade conexion a ethernet, wifi y gsm
+
+
 RELEASE 0.2.3
 - Primitiva que calcula curva de disparo
 - Se añade funcion setRAW para enviar comandos en bruto a un cliente
