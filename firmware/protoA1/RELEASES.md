@@ -1,3 +1,11 @@
+RELEASE 0.3.1 
+- Se almacena potencia contratada en la NVS
+- Se almacena consumo contratado en la NVS
+- Se crea nueva curva de disparo basada en media de consumo y deuda de consumo
+- Se tiene en cuenta la energía reactiva para la deuda de consumo
+- Se tiene en cuenta la energía contratada para el corte
+
+
 RELEASE 0.3.0
 - Cambios en el sistema de suscripcion para que se detecte que no hay conexion
 - Se añade el nombre del ESP
