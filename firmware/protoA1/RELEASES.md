@@ -1,3 +1,8 @@
+RELEASE 0.3.2
+- Se añaden los datos de los registros de lectura de un medidor como variables para poder añadir mas modelos
+- Si la firma no es válida, sólo bloquea modbus
+
+
 RELEASE 0.3.1 
 - Se almacena potencia contratada en la NVS
 - Se almacena consumo contratado en la NVS
