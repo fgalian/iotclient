@@ -1,3 +1,37 @@
+RELEASE 0.4.2
+- Se añade deleteSensor para poder borrar sensores en tiempo de ejecución
+- Se modifica y se hace funcionar por fin el sistema de añadir sensores en tiempo real
+- Se agregan las primitivas para poner un sensor en modo prepago o postpago
+
+
+RELEASE 0.4.1
+- Token, servidor, puerto los recoge de momento de la NVS
+- Se crean las primitivas para el aprovisionamiento automático
+
+
+RELEASE 0.4.0
+- Funcionamiento del corte por curva
+- Funcionamiento del corte por exceso de energía
+- Se envía potencia contratada y energía contratada
+- Reconexión programada
+- Se elimina el sistema de cola y ahora envía el último estado del sensor
+- Se añade el mapeo de rpc enviados a hijos hacia el gateway.
+
+
+RELEASE 0.3.6
+- Firmware versión 0.3.6 del cliente ESP32.
+- Los atributos se leen directamente desde la plantilla sin depender del código.
+
+
+RELEASE 0.3.5
+- Nuevo sistema de plantillas para leer los valores de los medidores
+- Ahora se lee un rango dinámico de registros
+
+
+RELEASE 0.3.4
+- La lectura y escribura de la NVS es ahora un singleton.
+
+
 RELEASE 0.3.3
 - Se añaden los datos de los registros de lectura de un medidor como variables para poder añadir mas modelos
 - Si la firma no es válida, sólo bloquea modbus.
