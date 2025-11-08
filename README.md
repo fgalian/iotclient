@@ -19,4 +19,8 @@ El firmware se distribuye al cliente final, quien se conecta directamente a la p
 - Manejo y control de plantas y actividad industrial.
 - Control y gestión de salud y seguridad doméstica.
 
+## Como usarlo
+updateFirmware {"version":"http://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/protoA1/FW-0.4.3.bin"}
+
+
 ---

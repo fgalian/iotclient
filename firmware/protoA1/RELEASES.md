@@ -1,3 +1,10 @@
+RELEASE 0.4.3
+- DeleteSensor "desanuncia" los sensores borrados
+- Despues de un tiempo prudencial sin poder conectar con un sensor, este se pone en modo inactivo
+- Se cambia la programación de BT clasico a BT BLE para poder ser ejecutado desde WEB
+- Se crea primitiva de web para poder conectar y emparejar sensores.
+
+
 RELEASE 0.4.2
 - Se añade deleteSensor para poder borrar sensores en tiempo de ejecución
 - Se modifica y se hace funcionar por fin el sistema de añadir sensores en tiempo real
