@@ -20,7 +20,12 @@ El firmware se distribuye al cliente final, quien se conecta directamente a la p
 - Control y gestión de salud y seguridad doméstica.
 
 ## Como usarlo
-updateFirmware {"version":"http://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/protoA1/FW-0.4.3.bin"}
+```
+updateFirmware {"version":"http://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/protoA1/FW-0.4.4.bin"}
+```
+
+## Versiones
+Firmware [PROTO A1](firmware/protoA1/RELEASES.md) para más detalles.
 
 
 ---

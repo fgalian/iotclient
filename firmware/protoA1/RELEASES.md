@@ -1,3 +1,14 @@
+Volver al [principio](../../README.md)
+
+RELEASE 0.4.4
+- Al contratar nueva energía, se elimina el retardo en la reconexión
+- Se añade el set y get prepago a los comandos
+- Se añade el medidor DDS238 y DDS238R de forma separada
+- Se añade prepago a las variables no volatiles
+- Se modifica plantilla de DDS238 y DDS238R para que manden W/h totales. Antes mandaba Kw/h totales
+- Ahora se puede apagar un medidor simplemente indicando que su potencia contratada es 0
+
+
 RELEASE 0.4.3
 - DeleteSensor "desanuncia" los sensores borrados
 - Despues de un tiempo prudencial sin poder conectar con un sensor, este se pone en modo inactivo
@@ -180,3 +191,5 @@ Release 0.0.5
 
 Release 0.0.4
 - Soporte OTA (Over-The-Air update) correctamente.
+
+Volver al [principio](../../README.md)
