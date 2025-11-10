@@ -56,7 +56,8 @@ updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/m
 > - Por motivos de seguridad, las versiones mas antiguas se irán retirando. En este caso se han retirado las versiones anteriores a la 0.3.0
 
 
----
+
+
 
 ## ✅ Recomendaciones antes de actualizar
 - Asegúrese de que el dispositivo esté **conectado a la red Wi-Fi** y con buena señal.  
@@ -68,13 +69,6 @@ Una vez completada la actualización, el dispositivo reiniciará automáticament
 
 ---
 
-## Versiones de firmware
-Firmware [PROTO A1](firmware/protoA1/RELEASES.md) para más detalles.
-
----
-
-## Tabla de compatibilidad de versiones de hardware y versiones de firmware
-
 
 ## 🧩 Compatibilidad entre versiones de Firmware y Hardware
 
@@ -82,7 +76,7 @@ La siguiente tabla muestra la compatibilidad entre las versiones actuales de **f
 
 | Firmware ↓ / Hardware → | PROTO A1 | PROTO A2 | PROTO B1 |
 |--------------------------|:---------:|:---------:|:---------:|
-| **FW-0.4.4 y anteriores** | ✅ | ✅ | ⏳ |
+| **FW-0.4.4 y anteriores** | [✅](firmware/protoA1/RELEASES.md) | ✅ | ⏳ |
 
 ---
 
@@ -95,11 +89,10 @@ La siguiente tabla muestra la compatibilidad entre las versiones actuales de **f
 | ❌ | **No compatible** — no se recomienda su uso. |
 | ⏳ | **No probado** — en pruebas y pendiente de verificación. |
 
----
 
-> 💡 **Recomendación:**  
-> Utilice siempre la versión de firmware más reciente (actualmente **FW-0.4.4**) para garantizar el mejor rendimiento, compatibilidad y soporte técnico.
 
+💡 **Recomendación:**  
+Utilice siempre la versión de firmware más reciente (actualmente **FW-0.4.4**) para garantizar el mejor rendimiento, compatibilidad y soporte técnico.
 
 
 ---
@@ -107,4 +100,4 @@ La siguiente tabla muestra la compatibilidad entre las versiones actuales de **f
 ## Manual de instalación
 En el siguiente [enlace](manuales/instalacion.md) podrá obtener la versión actualizada del manual de intalación del cliente y su sincronización con la plataforma
 
----
+

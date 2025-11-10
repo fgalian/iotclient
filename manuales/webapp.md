@@ -9,7 +9,13 @@ A continuación se detallan los pasos para realizar la configuración inicial de
 ## 🧭 1. Acceso a la WebApp
 Haga clic en el enlace proporcionado para abrir la aplicación web:  
 👉 [acceso](https://sexperiency.com/conexion.html)
+
 o bien escanee el siguiente código QR desde su movil
+
+
+![QR](./imagenes/accesowebapp.png)
+
+
 
 > 💡 **Consejo:** Use el navegador de su móvil.  
 > La aplicación está optimizada para **Android y iOS**.  
