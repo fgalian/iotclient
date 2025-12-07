@@ -19,13 +19,19 @@ El firmware se distribuye al cliente final, quien se conecta directamente a la p
 - Manejo y control de plantas y actividad industrial.
 - Control y gestión de salud y seguridad doméstica.
 
-## Como usarlo
+## Actualizar HARDWARE A1
 ```
-updateFirmware {"version":"http://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/protoA1/FW-0.4.4.bin"}
+updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/protoA1/FW-0.4.5.bin"}
 ```
 
-## Versiones
-Firmware [PROTO A1](firmware/protoA1/RELEASES.md) para más detalles.
+## Actualizar HARDWARE A2
+```
+updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/protoA2/FW-0.4.5.bin"}
+```
 
+
+## Versiones de firmware disponibles
+Firmware [PROTO A1](firmware/RELEASES.md) para más detalles.
+Firmware [PROTO A2](firmware/RELEASES.md) para más detalles.
 
 ---
