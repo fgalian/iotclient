@@ -24,9 +24,9 @@ Si es su primera instalación, asegúrese de tener a mano:
 ## 🧩 Soporte técnico
 Si necesita ayuda o desea ampliar las funcionalidades de su dispositivo, puede contactar con nosotros a través de:
 
-📧 **soporte@thinksiot.com**  
-🌐 **[https://](https://)**  
+📧 **soporte@fgtech.es**  
+🌐 **[https://www.fgtech.es](https://www.fgtech.es)**  
 
 ---
 
-© 2025 **Nombre de la empresa** — Todos los derechos reservados.
+© 2025 **FG Tech Software SL** — Todos los derechos reservados.

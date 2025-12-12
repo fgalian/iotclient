@@ -48,12 +48,12 @@ Para iniciar la actualización manualmente, también puede enviarse un comando d
 
 ## HARDWARE A1
 ```
-updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/protoA1/FW-0.4.5.bin"}
+updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/protoA1/FW-A1-0.4.5.bin"}
 ```
 
 ## HARDWARE A2
 ```
-updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/protoA2/FW-0.4.5.bin"}
+updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/protoA2/FW-A2-0.4.5.bin"}
 ```
 
 > 💡 **Nota:**  
@@ -82,9 +82,11 @@ Firmware [PROTO A2](firmware/RELEASES.md) para más detalles.
 La siguiente tabla muestra la compatibilidad entre las versiones actuales de **firmware** y los modelos de **hardware** del sistema **ThinkSIoT**.
 
 | Firmware ↓ / Hardware → | PROTO A1 | PROTO A2 |
-|--------------------------|:---------:|:---------:|:---------:|
-| **FW-0.4.4 y anteriores** | [✅](firmware/protoA1/) | ❌|
-| **FW-0.4.5 ** | [✅](firmware/protoA1) | [✅](firmware/protoA2) |
+|-------------------------|:--------:|:--------:|
+| **FW-0.4.4 y anteriores** | [✅](firmware/protoA1/) | ❌ |
+| **FW-0.4.5**             | [✅](firmware/protoA1/) | [✅](firmware/protoA2/) |
+| **FW-0.4.6**             | [✅](firmware/protoA1/) | [✅](firmware/protoA2/) |
+
 
 ---
 

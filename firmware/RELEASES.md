@@ -1,4 +1,8 @@
-Volver al [principio](../../README.md)
+Volver al [principio](../README.md)
+
+**RELEASE 0.4.6**
+- En el Hiking Tomzn DDS238 se elimina Wh porque no lo muestra bien
+
 
 **RELEASE 0.4.5**
 - Se añade compatibilidad con la placa PROTO A2
