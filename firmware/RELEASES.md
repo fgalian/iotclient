@@ -1,5 +1,11 @@
 Volver al [principio](../README.md)
 
+**RESEASE 0.4.7**
+- Se activa W para la potencia en todos los medidores
+- Se añade visualización correcta de Kwh en DDS6619
+- Se reorganiza el código
+
+
 **RELEASE 0.4.6**
 - En el Hiking Tomzn DDS238 se elimina Wh porque no lo muestra bien
 

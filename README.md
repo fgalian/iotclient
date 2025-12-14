@@ -71,21 +71,22 @@ updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/m
 Una vez completada la actualización, el dispositivo reiniciará automáticamente y se reconectará a la plataforma ThinkSIoT con la nueva versión activa.
 
 ## Versiones de firmware disponibles
-Firmware [PROTO A1](firmware/RELEASES.md) para más detalles.
-Firmware [PROTO A2](firmware/RELEASES.md) para más detalles.
+Firmware [PROTO A1](firmware/RELEASES.md) para más detalles.  
+Firmware [PROTO A2](firmware/RELEASES.md) para más detalles.  
 
 ---
 
 
 ## 🧩 Compatibilidad entre versiones de Firmware y Hardware
 
-La siguiente tabla muestra la compatibilidad entre las versiones actuales de **firmware** y los modelos de **hardware** del sistema **ThinkSIoT**.
+La siguiente tabla muestra la compatibilidad entre las versiones actuales de **firmware** y los modelos de **hardware** del sistema **ThinksIoT**.
 
 | Firmware ↓ / Hardware → | PROTO A1 | PROTO A2 |
 |-------------------------|:--------:|:--------:|
 | **FW-0.4.4 y anteriores** | [✅](firmware/protoA1/) | ❌ |
 | **FW-0.4.5**             | [✅](firmware/protoA1/) | [✅](firmware/protoA2/) |
 | **FW-0.4.6**             | [✅](firmware/protoA1/) | [✅](firmware/protoA2/) |
+| **FW-0.4.7**             | [✅](firmware/protoA1/) | [✅](firmware/protoA2/) |
 
 
 ---
