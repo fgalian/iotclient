@@ -1,5 +1,10 @@
 Volver al [principio](../README.md)
 
+**RELEASE 0.5.0**
+- Atención, al actualizar a esta versión desde otra anterior, se puede perder la conexion al servidor.
+- El servidor TB ya no está incrustado en el código.
+
+
 **RESEASE 0.4.7**
 - Se activa W para la potencia en todos los medidores
 - Se añade visualización correcta de Kwh en DDS6619

@@ -48,19 +48,19 @@ Para iniciar la actualización manualmente, también puede enviarse un comando d
 
 ## HARDWARE A1
 ```
-updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/protoA1/FW-A1-0.4.5.bin"}
+updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-PROTOA1-MED-0.5.0.bin"}
 ```
 
 ## HARDWARE A2
 ```
-updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/protoA2/FW-A2-0.4.5.bin"}
+updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-PROTOA2-MED-0.5.0.bin"}
 ```
 
 > 💡 **Nota:**  
 > - El campo `version` debe contener la **URL directa** al archivo `.bin` del firmware que desea instalar.  
 > - El dispositivo descargará el archivo, verificará su integridad y procederá automáticamente con la instalación.  
 > - Durante el proceso, el dispositivo se **reiniciará** para aplicar los cambios.
-> - Por motivos de seguridad, las versiones mas antiguas se irán retirando. En este caso se han retirado las versiones anteriores a la 0.3.0
+> - Las versiones mas antiguas se irán retirando. En este caso se han retirado las versiones anteriores a la 0.4.4
 
 
 ## ✅ Recomendaciones antes de actualizar
@@ -71,8 +71,7 @@ updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/m
 Una vez completada la actualización, el dispositivo reiniciará automáticamente y se reconectará a la plataforma ThinkSIoT con la nueva versión activa.
 
 ## Versiones de firmware disponibles
-Firmware [PROTO A1](firmware/RELEASES.md) para más detalles.  
-Firmware [PROTO A2](firmware/RELEASES.md) para más detalles.  
+Firmware [Todo el firmware disponible](firmware/RELEASES.md) para más detalles.  
 
 ---
 
@@ -84,9 +83,7 @@ La siguiente tabla muestra la compatibilidad entre las versiones actuales de **f
 | Firmware ↓ / Hardware → | PROTO A1 | PROTO A2 |
 |-------------------------|:--------:|:--------:|
 | **FW-0.4.4 y anteriores** | [✅](firmware/protoA1/) | ❌ |
-| **FW-0.4.5**             | [✅](firmware/protoA1/) | [✅](firmware/protoA2/) |
-| **FW-0.4.6**             | [✅](firmware/protoA1/) | [✅](firmware/protoA2/) |
-| **FW-0.4.7**             | [✅](firmware/protoA1/) | [✅](firmware/protoA2/) |
+| **FW-0.4.5 y posteriores**| [✅](firmware/FW-PROTOA1-MED-0.5.0.bin) | [✅](firmware/FW-PROTOA2-MED-0.5.0.bin) |
 
 
 ---

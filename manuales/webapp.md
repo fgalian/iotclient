@@ -165,12 +165,9 @@ En caso de cualquier inconveniente, asegúrese de:
 
 ---
 
-📧 **Soporte técnico:** soporte@thinksiot.com  
-🌐 **Sitio web:** [https://](https://)
+📧 **Soporte técnico:** soporte@fgtech.es  
+🌐 **Sitio web:** [https://www.fgtech.es](https://www.fgtech.es)
 
 ---
 
-© 2025 **ThinkSIoT** — Todos los derechos reservados.
-
-
-
+© 2025 **FG Tech Software SL** — Todos los derechos reservados.
