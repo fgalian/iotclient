@@ -48,12 +48,12 @@ Para iniciar la actualización manualmente, también puede enviarse un comando d
 
 ## HARDWARE A1
 ```
-updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-PROTOA1-MED-0.5.0.bin"}
+updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-PROTOA1-MED-0.5.1.bin"}
 ```
 
 ## HARDWARE A2
 ```
-updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-PROTOA2-MED-0.5.0.bin"}
+updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-PROTOA2-MED-0.5.1.bin"}
 ```
 
 > 💡 **Nota:**  
@@ -83,7 +83,7 @@ La siguiente tabla muestra la compatibilidad entre las versiones actuales de **f
 | Firmware ↓ / Hardware → | PROTO A1 | PROTO A2 |
 |-------------------------|:--------:|:--------:|
 | **FW-0.4.4 y anteriores** | [✅](firmware/protoA1/) | ❌ |
-| **FW-0.4.5 y posteriores**| [✅](firmware/FW-PROTOA1-MED-0.5.0.bin) | [✅](firmware/FW-PROTOA2-MED-0.5.0.bin) |
+| **FW-0.4.5 y posteriores**| [✅](firmware/FW-PROTOA1-MED-0.5.1.bin) | [✅](firmware/FW-PROTOA2-MED-0.5.1.bin) |
 
 
 ---

@@ -1,5 +1,11 @@
 Volver al [principio](../README.md)
 
+**RELEASE 0.5.1**
+Atención, al actualizar a esta versión desde 0.4.7 o anterior, se pierde la conexion al servidor.
+- Proto A2 Se activan led de envío y recepción
+- Se añade el comando resetConfig para dejar de fábrica el Gateway
+
+
 **RELEASE 0.5.0**
 - Atención, al actualizar a esta versión desde otra anterior, se puede perder la conexion al servidor.
 - El servidor TB ya no está incrustado en el código.
