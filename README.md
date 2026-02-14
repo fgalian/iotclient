@@ -48,12 +48,12 @@ Para iniciar la actualización manualmente, también puede enviarse un comando d
 
 ## HARDWARE A1
 ```
-updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-PROTOA1-MED-0.5.1.bin"}
+updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-PROTOA1-MED-0.6.0.bin"}
 ```
 
 ## HARDWARE A2
 ```
-updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-PROTOA2-MED-0.5.1.bin"}
+updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-PROTOA2-MED-0.6.0.bin"}
 ```
 
 > 💡 **Nota:**  
@@ -82,8 +82,10 @@ La siguiente tabla muestra la compatibilidad entre las versiones actuales de **f
 
 | Firmware ↓ / Hardware → | PROTO A1 | PROTO A2 |
 |-------------------------|:--------:|:--------:|
-| **FW-0.4.4 y anteriores** | [✅](firmware/protoA1/) | ❌ |
-| **FW-0.4.5 y posteriores**| [✅](firmware/FW-PROTOA1-MED-0.5.1.bin) | [✅](firmware/FW-PROTOA2-MED-0.5.1.bin) |
+| **FW-0.4.4 y anteriores** | [✅](firmware/) | ❌ |
+| **FW-Ax-MED**| [✅](firmware/FW-PROTOA1-MED-0.6.0.bin) | [✅](firmware/FW-A2-MED-0.6.0.bin) |
+| **FW-A2-NFC**| ❌ | [✅](firmware/FW-A2-NFC-0.6.0.bin) |
+
 
 
 ---
@@ -100,12 +102,11 @@ La siguiente tabla muestra la compatibilidad entre las versiones actuales de **f
 
 
 💡 **Recomendación:**  
-Utilice siempre la versión de firmware más reciente (actualmente **FW-0.4.5**) para garantizar el mejor rendimiento, compatibilidad y soporte técnico.
+Utilice siempre la versión de firmware más reciente (actualmente **FW-0.6.0**) para garantizar el mejor rendimiento, compatibilidad y soporte técnico.
 
 
 ---
 
 ## Manual de instalación
 En el siguiente [enlace](manuales/instalacion.md) podrá obtener la versión actualizada del manual de intalación del cliente y su sincronización con la plataforma
-
 

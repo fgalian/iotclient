@@ -1,5 +1,12 @@
 Volver al [principio](../README.md)
 
+**RELEASE 0.6.0**
+Se elimina el soporte de las versiones 0.4.*
+- Se activa la posibilidad de apagar el medidor por medio del operador independiente de la programación
+- Versión inicial del proyecto NFC, totalmente compatible con A2 y en verificación de PROTOA1
+- Se añade el id del lector en cada lectura (NFC)
+
+
 **RELEASE 0.5.1**
 Atención, al actualizar a esta versión desde 0.4.7 o anterior, se pierde la conexion al servidor.
 - Proto A2 Se activan led de envío y recepción
