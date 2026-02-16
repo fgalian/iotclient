@@ -1,5 +1,9 @@
 Volver al [principio](../README.md)
 
+**RELEASE 0.6.2**
+- Se implementa borrado por teclado en proyecto NFC
+
+
 **RELEASE 0.6.1**
 - Se añade pushTarjeta como comando en NFC
 

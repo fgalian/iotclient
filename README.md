@@ -58,7 +58,7 @@ updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/m
 
 ## HARDWARE A2 NFC
 ```
-updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-A2-NFC-0.6.1.bin"}
+updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-A2-NFC-0.6.2.bin"}
 ```
 
 
