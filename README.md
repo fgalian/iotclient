@@ -51,10 +51,16 @@ Para iniciar la actualización manualmente, también puede enviarse un comando d
 updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-PROTOA1-MED-0.6.0.bin"}
 ```
 
-## HARDWARE A2
+## HARDWARE A2 Medidores
 ```
-updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-PROTOA2-MED-0.6.0.bin"}
+updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-A2-MED-0.6.0.bin"}
 ```
+
+## HARDWARE A2 NFC
+```
+updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-A2-NFC-0.6.1.bin"}
+```
+
 
 > 💡 **Nota:**  
 > - El campo `version` debe contener la **URL directa** al archivo `.bin` del firmware que desea instalar.  
