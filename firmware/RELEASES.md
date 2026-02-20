@@ -1,4 +1,7 @@
 Volver al [principio](../README.md)
+**RELEASE 0.6.3 NFC**
+- Reparación versión 0.6.2. La anterior se elimina
+
 
 **RELEASE 0.6.2**
 - Se implementa borrado por teclado en proyecto NFC

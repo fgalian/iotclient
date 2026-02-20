@@ -58,7 +58,7 @@ updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/m
 
 ## HARDWARE A2 NFC
 ```
-updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-A2-NFC-0.6.2.bin"}
+updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-A2-NFC-0.6.3.bin"}
 ```
 
 
@@ -90,7 +90,7 @@ La siguiente tabla muestra la compatibilidad entre las versiones actuales de **f
 |-------------------------|:--------:|:--------:|
 | **FW-0.4.4 y anteriores** | [✅](firmware/) | ❌ |
 | **FW-Ax-MED**| [✅](firmware/FW-PROTOA1-MED-0.6.0.bin) | [✅](firmware/FW-A2-MED-0.6.0.bin) |
-| **FW-A2-NFC**| ❌ | [✅](firmware/FW-A2-NFC-0.6.0.bin) |
+| **FW-A2-NFC**| ❌ | [✅](firmware/FW-A2-NFC-0.6.3.bin) |
 
 
 
