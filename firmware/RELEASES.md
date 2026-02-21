@@ -1,4 +1,13 @@
 Volver al [principio](../README.md)
+
+**RELEASE 0.6.4 NFC y MED**
+- Los led inicialmente pensados para TX y RX ahora se usan para  
+  comprobar el estado de la RED y el cliente MQTT
+- Se comenta gran parte del código para eth y gsm
+- En siguiente versión se eliminará.
+- Si no consigue conectar con el token actual a MQTT lo borra en 100 intentos
+
+
 **RELEASE 0.6.3 NFC**
 - Reparación versión 0.6.2. La anterior se elimina
 
