@@ -1,5 +1,23 @@
 Volver al [principio](../README.md)
 
+**RELEASE 0.6.7 NFC y MED**
+- Se elimina el cambio de nombre de GW
+- Se borra gran parte del código comentado para redes moviles y eth
+- Se eliminan versiones 0.6.6 y 0.6.5
+
+
+**RELEASE 0.6.6 NFC y MED**
+- Solo se borra el token si es rechazado por el servicor
+- Posibilidad de cambiar el nombre del GW
+- Se borra gran parte del código comentado para redes moviles y eth
+- Los codigos de apertura y reset se pueden escoger y guardar en NVS
+- Al cambiar la wifi ahora resetea el esp32
+
+
+**RELEASE 0.6.5 NFC y MED**
+- Ahora solo borra el token si realmente es rechazado por el servidor.
+
+
 **RELEASE 0.6.4 NFC y MED**
 - Los led inicialmente pensados para TX y RX ahora se usan para  
   comprobar el estado de la RED y el cliente MQTT
