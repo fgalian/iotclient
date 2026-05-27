@@ -1,5 +1,21 @@
 Volver al [principio](../README.md)
 
+**RELEASE 0.7.2 MED**
+- Se añade URL de aprovisionamiento configurable en NVS mediante CONFIG/provisionUrl
+- Si no existe CONFIG/provisionUrl, se usa la URL de aprovisionamiento por defecto
+- Si CONFIG/provisionUrl no existe o está vacía, se guarda automáticamente la URL por defecto en NVS
+- El comando setURL permite cambiar el servidor MQTT y opcionalmente la URL de aprovisionamiento
+- Se mantiene compatibilidad con equipos antiguos que no tenían guardada la URL de aprovisionamiento en NVS
+
+
+**RELEASE 0.7.1**
+Versión de transición, no abierta al público
+
+
+**RELEASE 0.7.0**
+Versión de transición, no abierta al público
+
+
 **RELEASE 0.6.7 NFC y MED**
 - Se elimina el cambio de nombre de GW
 - Se borra gran parte del código comentado para redes moviles y eth
