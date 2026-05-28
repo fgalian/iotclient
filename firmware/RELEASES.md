@@ -1,5 +1,9 @@
 Volver al [principio](../README.md)
 
+**RELEASE 0.7.3 MED**
+- Problemas con la gestion de la url de provisionamiento
+
+
 **RELEASE 0.7.2 MED**
 - Se añade URL de aprovisionamiento configurable en NVS mediante CONFIG/provisionUrl
 - Si no existe CONFIG/provisionUrl, se usa la URL de aprovisionamiento por defecto

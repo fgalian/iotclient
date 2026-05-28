@@ -48,12 +48,12 @@ Para iniciar la actualización manualmente, también puede enviarse un comando d
 
 ## HARDWARE A1
 ```
-updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-PROTOA1-MED-0.7.2.bin"}
+updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-PROTOA1-MED-0.7.3.bin"}
 ```
 
 ## HARDWARE A2 Medidores
 ```
-updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-A2-MED-0.7.2.bin"}
+updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-A2-MED-0.7.3.bin"}
 ```
 
 ## HARDWARE A2 NFC
@@ -66,7 +66,7 @@ updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/m
 > - El campo `version` debe contener la **URL directa** al archivo `.bin` del firmware que desea instalar.  
 > - El dispositivo descargará el archivo, verificará su integridad y procederá automáticamente con la instalación.  
 > - Durante el proceso, el dispositivo se **reiniciará** para aplicar los cambios.
-> - Las versiones mas antiguas se irán retirando. En este caso se han retirado las versiones anteriores a la 0.4.4
+> - Las versiones mas antiguas se irán retirando. En este caso se han retirado las versiones anteriores a la 0.6.0
 
 
 ## ✅ Recomendaciones antes de actualizar
@@ -89,7 +89,7 @@ La siguiente tabla muestra la compatibilidad entre las versiones actuales de **f
 | Firmware ↓ / Hardware → | PROTO A1 | PROTO A2 |
 |-------------------------|:--------:|:--------:|
 | **FW-0.4.4 y anteriores** | [✅](firmware/) | ❌ |
-| **FW-Ax-MED**| [✅](firmware/FW-PROTOA1-MED-0.7.2.bin) | [✅](firmware/FW-A2-MED-0.7.2.bin) |
+| **FW-Ax-MED**| [✅](firmware/FW-PROTOA1-MED-0.7.3.bin) | [✅](firmware/FW-A2-MED-0.7.3.bin) |
 | **FW-A2-NFC**| ❌ | [✅](firmware/FW-A2-NFC-0.6.7.bin) |
 
 
@@ -107,7 +107,7 @@ La siguiente tabla muestra la compatibilidad entre las versiones actuales de **f
 
 
 💡 **Recomendación:**  
-Utilice siempre la versión de firmware más reciente (actualmente **FW-0.7.2**) para garantizar el mejor rendimiento, compatibilidad y soporte técnico.
+Utilice siempre la versión de firmware más reciente (actualmente **FW-0.7.3**) para garantizar el mejor rendimiento, compatibilidad y soporte técnico.
 
 
 ---
