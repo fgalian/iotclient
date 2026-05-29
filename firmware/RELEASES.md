@@ -1,5 +1,9 @@
 Volver al [principio](../README.md)
 
+**RELEASE 0.7.4 MED**
+- La anterior release funciona bien pero getData daba error.
+
+
 **RELEASE 0.7.3 MED**
 - Problemas con la gestion de la url de provisionamiento
 
