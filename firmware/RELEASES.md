@@ -1,5 +1,14 @@
 Volver al [principio](../README.md)
 
+**RELEASE 0.7.5 MED (Release Candidate 1) **
+Evita que un sensor pueda quedar en modo prepago si su plantilla no define
+el campo R1.
+   
+- Cambia el valor por defecto de prepago a false.
+- Al aplicar el tipo de medidor, fuerza y persiste prepago=false cuando no hay R1.
+- Versión RC1
+
+
 **RELEASE 0.7.4 MED**
 - La anterior release funciona bien pero getData daba error.
 
