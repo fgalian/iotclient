@@ -1,9 +1,76 @@
 Volver al [principio](../README.md)
 
+RELEASE 0.8.3 MED
+=================
+- Se añade una consola Telnet en el puerto 23 con autenticación, control de sesión y comandos JSON.
+- El equipo permanece activo si falla el aprovisionamiento para permitir su recuperación mediante Telnet.
+- Se añaden los comandos getNVS y setNVS para consultar y modificar valores NVS desde Telnet, Bluetooth y RPC.
+- Se corrige la lectura de los parámetros pagina y variable en getNVS/setNVS.
+- setURL elimina el token MQTT anterior para forzar un nuevo aprovisionamiento tras reiniciar.
+- getData muestra el servidor y puerto MQTT utilizados realmente en la conexión.
+- Se actualiza el tamaño del firmware firmado para la versión 0.8.3.
+- Se amplía la documentación de la API con los nuevos comandos.
+- Se incorpora la auditoría técnica de la versión 0.8.2.
+
+
+RELEASE 0.8.2
+=============
+- Se añade almacenamiento persistente de latitud y longitud para cada sensor.
+- Las coordenadas se guardan en NVS mediante las claves LAT_<id> y LON_<id>.
+- getSensor devuelve los campos latitude y longitude.
+- deleteSensor elimina también las coordenadas guardadas.
+- Al anunciar un sensor se solicitan sus atributos compartidos latitude y longitude a ThingsBoard.
+- Se añade la suscripción a las respuestas de atributos de los dispositivos gateway.
+- Las coordenadas recibidas desde ThingsBoard se actualizan en el sensor y se guardan en NVS.
+- Se añade el comando deleteToken.
+- deleteToken elimina únicamente el token MQTT y reinicia el equipo para volver a aprovisionarlo.
+- La respuesta de deleteToken se envía antes de ejecutar el reinicio.
+- Se centralizan los valores fallback de MQTT y aprovisionamiento en variables globales.
+- Se añaden al fallback la clave y el secreto de aprovisionamiento.
+- Los valores fallback pasan a utilizarse únicamente en RAM, sin sobrescribir automáticamente la configuración guardada en NVS.
+- El aprovisionamiento utiliza el fallback completo cuando la configuración MQTT, la URL o las credenciales no son válidas.
+- Después de 100 intentos fallidos de conexión MQTT ya no se elimina el token ni se reinicia el equipo.
+- Tras 100 fallos se intenta obtener un token temporal mediante el servidor de aprovisionamiento fallback.
+- El token fallback es efímero y no se guarda en NVS.
+- La conexión al servidor MQTT fallback tampoco modifica la configuración persistente.
+- Se cambia el mensaje de setWifi para indicar que el reinicio debe realizarse manualmente.
+- Se documenta el uso de setURL con host, puerto, URL y credenciales de aprovisionamiento.
+- Se deshabilita temporalmente setApagado y su declaración pública.
+- Se deshabilitan los campos dinámicos C, P_prev y last_ms del sensor.
+- Se deshabilita la variable usarCorreccionPF.
+- Se comenta temporalmente la configuración de pines de la placa RELAYX2.
+- Se comenta la declaración de setNombre en comandos.h.
+
+
+RELEASE 0.8.1
+=============
+Restaura la configuración de Serial2 de 8E1 a 8N1.
+Permite enviar las credenciales de aprovisionamiento durante la configuración inicial.
+La versión 0.8.0 no llega a publicarse por ser defectuosa.
+
+
+RELEASE 0.7.7
+=============
+
+- Sustituye el formato antiguo byte1/byte2 de setRAW por tipos u16, i16, u32, float y words.
+- Añade escrituras Modbus 0x06 para una palabra y 0x10 para varias palabras.
+- Permite escribir valores float de 32 bits, necesarios para el DDS665.
+- Protege las operaciones RAW con el mutex compartido del bus RS485.
+- Expone la instancia global node desde modbus.h.
+- Configura el puerto RS485 del DDS6619/DDS665 como 9600 8E1.
+- Añade trazas de éxito y error para diagnosticar las escrituras.
+- Evita que el wrapper RPC sobrescriba el resultado real de setRAW.
+- Añade la plantilla de lectura del DDS665 en medidores.h.
+- Documenta en API_MEDIDORES los registros y ejemplos para DDS238/DDS238R y DDS665.
+- Documenta el cambio de dirección del DDS665 usando el registro 0x0008 y un valor float.
+- Corrige la documentación del cálculo del nuevo ID en los medidores Hiking.
+- Verifica la compilación para la placa A2.
+
+
 **RELEASE 0.7.5 MED (Release Candidate 1) **
 Evita que un sensor pueda quedar en modo prepago si su plantilla no define
 el campo R1.
-   
+
 - Cambia el valor por defecto de prepago a false.
 - Al aplicar el tipo de medidor, fuerza y persiste prepago=false cuando no hay R1.
 - Versión RC1
