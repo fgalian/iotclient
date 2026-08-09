@@ -1,7 +1,34 @@
 Volver al [principio](../README.md)
 
-RELEASE 0.8.3 MED
-=================
+
+
+**RELEASE 0.8.5 MED (RELEASE CANDIDATE 2)** 
+- Mantener las nuevas imágenes OTA pendientes de validación durante 300 segundos
+- Supervisar las tareas Modbus y publicación mediante watchdog de 30 segundos
+- Confirmar el firmware cuando ambas tareas permanecen activas
+- Ejecutar rollback si una tarea se bloquea o la firma no es válida
+- Permitir la validación sin conexión WiFi o MQTT
+- Continuar el arranque offline tras 10 segundos sin WiFi
+- Calcular dinámicamente el tamaño real de la imagen para verificar su firma
+- Hacer obligatorio el firmado en build.sh
+- Eliminar el parámetro de compilación para generar firmware sin firmar
+
+
+
+**RELEASE 0.8.4 MED**
+- Se corrige la recuperación inicial de tiempoLecturas y tiempoEnvios desde los atributos compartidos de ThingsBoard.
+- La petición de atributos utiliza ahora el formato sharedKeys esperado por ThingsBoard.
+- Se añade la suscripción a v1/devices/me/attributes/response/+.
+- Se comprueba el resultado de la publicación de la petición inicial.
+- Se validan el tipo y los límites de tiempoLecturas y tiempoEnvios antes de aplicarlos.
+- Los intervalos se almacenan como variables atómicas para compartirlos correctamente entre las tareas MQTT y Modbus.
+- setSensor permite guardar latitude y longitude, conjuntamente o por separado.
+- Se validan los rangos de latitud y longitud antes de escribirlos.
+- Las coordenadas se guardan en NVS mediante LAT_n y LON_n.
+
+
+
+**RELEASE 0.8.3 MED**
 - Se añade una consola Telnet en el puerto 23 con autenticación, control de sesión y comandos JSON.
 - El equipo permanece activo si falla el aprovisionamiento para permitir su recuperación mediante Telnet.
 - Se añaden los comandos getNVS y setNVS para consultar y modificar valores NVS desde Telnet, Bluetooth y RPC.
@@ -13,8 +40,7 @@ RELEASE 0.8.3 MED
 - Se incorpora la auditoría técnica de la versión 0.8.2.
 
 
-RELEASE 0.8.2
-=============
+**RELEASE 0.8.2**
 - Se añade almacenamiento persistente de latitud y longitud para cada sensor.
 - Las coordenadas se guardan en NVS mediante las claves LAT_<id> y LON_<id>.
 - getSensor devuelve los campos latitude y longitude.
@@ -42,16 +68,13 @@ RELEASE 0.8.2
 - Se comenta la declaración de setNombre en comandos.h.
 
 
-RELEASE 0.8.1
-=============
+**RELEASE 0.8.1**
 Restaura la configuración de Serial2 de 8E1 a 8N1.
 Permite enviar las credenciales de aprovisionamiento durante la configuración inicial.
 La versión 0.8.0 no llega a publicarse por ser defectuosa.
 
 
-RELEASE 0.7.7
-=============
-
+**RELEASE 0.7.7**
 - Sustituye el formato antiguo byte1/byte2 de setRAW por tipos u16, i16, u32, float y words.
 - Añade escrituras Modbus 0x06 para una palabra y 0x10 para varias palabras.
 - Permite escribir valores float de 32 bits, necesarios para el DDS665.
@@ -68,9 +91,7 @@ RELEASE 0.7.7
 
 
 **RELEASE 0.7.5 MED (Release Candidate 1) **
-Evita que un sensor pueda quedar en modo prepago si su plantilla no define
-el campo R1.
-
+- Evita que un sensor pueda quedar en modo prepago si su plantilla no define el campo R1.
 - Cambia el valor por defecto de prepago a false.
 - Al aplicar el tipo de medidor, fuerza y persiste prepago=false cuando no hay R1.
 - Versión RC1
