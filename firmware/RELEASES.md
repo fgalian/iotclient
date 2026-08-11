@@ -1,6 +1,30 @@
 Volver al [principio](../README.md)
 
 
+**RELEASE 0.8.7 MED**
+Migrar BTesp32 de Bluedroid a NimBLE  
+- Sustituir la pila Bluedroid por NimBLE-Arduino.
+- Mantener los UUID y el protocolo BLE existentes.
+- Conservar la autenticación y el manejador de comandos.
+- Anunciar el nombre configurado y el UUID del servicio.
+- Iniciar explícitamente el servidor GATT y el advertising.
+- Detener BLE cuando el firmware confirma la conexión Wi-Fi.
+- Reducir significativamente el uso de flash en ESP32 clásico.
+
+
+**RELEASE 0.8.6 MED**
+No abierta al público
+- 20 tests reales que verifican comportamiento observable del código
+- Validaciones de host, puerto, URL de provision, credenciales y NVS
+- Tests de JSON parsing con ArduinoJson 7.x
+- Tests de operaciones FakeNVS (guardado y recuperación de valores)
+- 100% de tests passing
+- 45 fallos documentados en 4 categorías de prioridad
+- 18 fallos corregidos (40% del total)
+- Plan de acción definido por prioridades
+- DD-001: Credenciales por defecto admin/admin para Bluetooth y Telnet
+- Justificación técnica y mitigaciones de seguridad documentadas
+
 
 **RELEASE 0.8.5 MED (RELEASE CANDIDATE 2)** 
 - Mantener las nuevas imágenes OTA pendientes de validación durante 300 segundos
