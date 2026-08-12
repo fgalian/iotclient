@@ -1,6 +1,17 @@
 Volver al [principio](../README.md)
 
 
+**RELEASE 0.8.8**
+- Restaurar la secuencia correcta de conexión Wi-Fi, Bluetooth y MQTT.
+- Mantener Bluetooth activo mientras no exista conexión Wi-Fi.
+- Iniciar MQTT únicamente después de establecer la conexión de red.
+- Mantener operativa la lectura RS-485 durante los reintentos de conexión.
+- Retirar las versiones 0.8.6 y 0.8.7 debido a sus errores en la secuencia de conexión.
+- Establecer la versión 0.8.8 como firmware recomendado para instalación y actualización.
+- Se borra la versión 0.8.7 y 0.8.6
+- Se vuelve a dar soporte a A1
+
+
 **RELEASE 0.8.7 MED**
 Migrar BTesp32 de Bluedroid a NimBLE  
 - Sustituir la pila Bluedroid por NimBLE-Arduino.
