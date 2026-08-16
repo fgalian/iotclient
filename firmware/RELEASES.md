@@ -1,5 +1,18 @@
 Volver al [principio](../README.md)
 
+**RELEASE 0.8.9**
+Mejoras de conectividad, diagnóstico y recuperación automática
+
+- Se mejora la estabilidad durante el arranque y la conexión simultánea de Bluetooth y Wi-Fi.
+- Se añade una herramienta de diagnóstico del arranque para facilitar la detección de incidencias.
+- Se incorpora el comando ping para comprobar desde Telnet o Bluetooth si una dirección IP o un servidor son accesibles.
+- Se mejora la recuperación automática cuando el servidor principal no está disponible.
+- Se reduce el tiempo necesario para cambiar al servidor alternativo.
+- Se mejora el aprovisionamiento automático y la gestión de la conexión con el servidor.
+- Se mejora la fiabilidad de las actualizaciones remotas de firmware.
+- Se mejora la detección de fallos durante el arranque y la recuperación automática ante errores.
+- Se simplifica la identificación y selección del dispositivo conectado durante la instalación del firmware.
+- Se eliminan versiones obsoletas del firmware
 
 **RELEASE 0.8.8**
 - Restaurar la secuencia correcta de conexión Wi-Fi, Bluetooth y MQTT.
