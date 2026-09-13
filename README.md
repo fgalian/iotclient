@@ -20,7 +20,7 @@ El firmware se distribuye al cliente final, quien se conecta directamente a la p
 - Control y gestión de salud y seguridad doméstica.
 
 
-# 🔄 Cómo actualizar nuestro dispositivo
+## 🔄 Cómo actualizar su dispositivo
 El sistema ThinkSIoT permite mantener su dispositivo siempre al día mediante un mecanismo de **actualización de firmware remota (OTA, Over-The-Air)**.  
 Este proceso garantiza que su equipo disponga de las **últimas mejoras, correcciones de seguridad y nuevas funcionalidades** sin necesidad de conectarlo físicamente al ordenador.
 
@@ -48,17 +48,17 @@ Para iniciar la actualización manualmente, también puede enviarse un comando d
 
 ## HARDWARE A1
 ```
-updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-PROTOA1-MED-0.8.9.bin"}
+updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-PROTOA1-MED-0.8.11.bin"}
 ```
 
 ## HARDWARE A2 Medidores
 ```
-updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-A2-MED-0.8.9.bin"}
+updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-A2-MED-0.8.11.bin"}
 ```
 
 ## HARDWARE A3 Medidores
 ```
-updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-A3-MED-0.8.9.bin"}
+updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-A3-MED-0.8.11.bin"}
 ```
 
 
@@ -72,7 +72,7 @@ updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/m
 > - El campo `version` debe contener la **URL directa** al archivo `.bin` del firmware que desea instalar.  
 > - El dispositivo descargará el archivo, verificará su integridad y procederá automáticamente con la instalación.  
 > - Durante el proceso, el dispositivo se **reiniciará** para aplicar los cambios.
-> - Las versiones mas antiguas se irán retirando. En este caso se han retirado las versiones anteriores a la 0.6.0
+> - Las versiones más antiguas se irán retirando. En este caso se han retirado las versiones anteriores a la 0.6.0
 
 
 ## ✅ Recomendaciones antes de actualizar
@@ -95,7 +95,7 @@ La siguiente tabla muestra la compatibilidad entre las versiones actuales de **f
 | Firmware ↓ / Hardware → | PROTO A1 | A2 | A3 |
 |-------------------------|:--------:|:--:|:--:|
 | **FW-0.4.4 y anteriores** | [✅](firmware/) | ❌ | ❌ |
-| **FW-Ax-MED** | [✅](firmware/FW-PROTOA1-MED-0.8.9.bin) | [✅](firmware/FW-A2-MED-0.8.9.bin) | [✅](firmware/FW-A3-MED-0.8.9.bin) |
+| **FW-Ax-MED** | [✅](firmware/FW-PROTOA1-MED-0.8.11.bin) | [✅](firmware/FW-A2-MED-0.8.11.bin) | [✅](firmware/FW-A3-MED-0.8.11.bin) |
 | **FW-Ax-NFC** | ❌ | [✅](firmware/FW-A2-NFC-0.6.7.bin) | [✅](firmware/FW-A3-NFC-0.6.7.bin) |
 ---
 
@@ -104,18 +104,18 @@ La siguiente tabla muestra la compatibilidad entre las versiones actuales de **f
 | Símbolo | Descripción |
 |:--------:|-------------|
 | ✅ | **Totalmente compatible** — probado y estable. |
-| ⚠️ | **Parcialmente compatible** — requiere ajustes, configuración adicional o perdida de algunas características. |
+| ⚠️ | **Parcialmente compatible** — requiere ajustes, configuración adicional o pérdida de algunas características. |
 | ❌ | **No compatible** — no se recomienda su uso. |
 | ⏳ | **No probado** — en pruebas y pendiente de verificación. |
 
 
 
 💡 **Recomendación:**  
-Utilice siempre la versión de firmware más reciente (actualmente **FW-0.8.9**) para garantizar el mejor rendimiento, compatibilidad y soporte técnico.
+Utilice siempre la versión de firmware más reciente de su gama para garantizar el mejor rendimiento, compatibilidad y soporte técnico: **FW-0.8.11** en medidores (MED) y **FW-0.6.7** en equipos NFC.
 
 
 ---
 
 ## Manual de instalación
-En el siguiente [enlace](manuales/instalacion.md) podrá obtener la versión actualizada del manual de intalación del cliente y su sincronización con la plataforma
+En el siguiente [enlace](manuales/instalacion.md) podrá obtener la versión actualizada del manual de instalación del cliente y su sincronización con la plataforma
 

@@ -1,4 +1,9 @@
 Volver al [principio](../README.md)
+**RELEASE 0.8.11**
+Reparación lectura medidor trifásico DDS6619.
+
+**RELEASE 0.8.10**
+Se añade medidor trifásico DDS6619 pero no sale publicada.
 
 **RELEASE 0.8.9**
 Mejoras de conectividad, diagnóstico y recuperación automática
@@ -176,7 +181,7 @@ Versión de transición, no abierta al público
 
 
 **RELEASE 0.6.6 NFC y MED**
-- Solo se borra el token si es rechazado por el servicor
+- Solo se borra el token si es rechazado por el servidor
 - Posibilidad de cambiar el nombre del GW
 - Se borra gran parte del código comentado para redes moviles y eth
 - Los codigos de apertura y reset se pueden escoger y guardar en NVS
@@ -225,7 +230,7 @@ Atención, al actualizar a esta versión desde 0.4.7 o anterior, se pierde la co
 - El servidor TB ya no está incrustado en el código.
 
 
-**RESEASE 0.4.7**
+**RELEASE 0.4.7**
 - Se activa W para la potencia en todos los medidores
 - Se añade visualización correcta de Kwh en DDS6619
 - Se reorganiza el código
@@ -288,7 +293,7 @@ Atención, al actualizar a esta versión desde 0.4.7 o anterior, se pierde la co
 
 
 **RELEASE 0.3.4**
-- La lectura y escribura de la NVS es ahora un singleton.
+- La lectura y escritura de la NVS es ahora un singleton.
 
 
 **RELEASE 0.3.3**
@@ -433,4 +438,4 @@ Atención, al actualizar a esta versión desde 0.4.7 o anterior, se pierde la co
 **RELEASE 0.0.4**
 - Soporte OTA (Over-The-Air update) correctamente.
 
-Volver al [principio](../../README.md)
+Volver al [principio](../README.md)

@@ -61,7 +61,7 @@ Tras la conexión, aparecerá la **pantalla de inicio de sesión**, donde deber�
 ## ✅ 4. Conexión y autorización correctas
 Si el **usuario** y la **contraseña** se han introducido correctamente, la WebApp mostrará una pantalla similar a la siguiente:
 
-![Conexión autorizada](./imgagenes/04webapp.jpg)
+![Conexión autorizada](./imagenes/04webapp.jpg)
 
 En esta ventana puede verse:
 - Un mensaje de confirmación ✅ **“Conectado a FGSoftware”**, indicando que la comunicación BLE con el dispositivo ESP32 se ha establecido correctamente.  
@@ -113,7 +113,9 @@ Una vez introducido el SSID y confirmado el cuadro de diálogo, se solicitará l
 ![Configuración Wi-Fi — Contraseña](./imagenes/07webapp.jpg)
 
 Introduzca la contraseña correspondiente y pulse **Aceptar** para completar el proceso.  
-Si los datos son correctos, el dispositivo intentará conectarse automáticamente a la red seleccionada y, en pocos segundos, quedará vinculado a la plataforma ThinkSIoT.
+Si los datos son correctos, el dispositivo guardará la configuración y deberá **reiniciarse** para aplicarla. Según la versión de firmware, el reinicio se realiza automáticamente o se solicita de forma manual (por ejemplo, con el botón **REBOOT** de la consola). Durante el reinicio se perderá la conexión Bluetooth: es un comportamiento esperado.
+
+Una vez reiniciado, el equipo se conectará a la red seleccionada y quedará vinculado a la plataforma ThinkSIoT.
 
 ---
 
@@ -134,7 +136,8 @@ Donde:
 > - Debe respetarse la sintaxis exacta del comando:  
 >   - Después de `SETWIFI` deben ir **dos puntos (`:`)**.  
 >   - Entre el **SSID** y la **contraseña** debe colocarse una **coma (`,`)**.  
->   - Todo el comando debe escribirse **en una sola línea y sin espacios**.  
+>   - Todo el comando debe escribirse **en una sola línea y sin espacios**.
+> - Tras ejecutar el comando, el dispositivo debe **reiniciarse** para aplicar la configuración: algunas versiones de firmware lo reinician automáticamente y otras muestran un aviso para reiniciarlo manualmente (por ejemplo, con el botón **REBOOT**).  
 >
 > Ejemplo:
 > ```
@@ -150,7 +153,9 @@ Donde:
 ---
 
 ## ✅ 7. Conexión completada
-Si los datos son correctos, el dispositivo se conectará automáticamente a la red Wi-Fi y, en pocos segundos, aparecerá **conectado a la plataforma ThinkSIoT**.
+Tras el reinicio, el dispositivo se conectará automáticamente a la red Wi-Fi configurada y, en pocos segundos, aparecerá **conectado a la plataforma ThinkSIoT**.
+
+Si el equipo no se hubiera reiniciado todavía, hágalo manualmente (por ejemplo, con el botón **REBOOT** de la consola) para aplicar la configuración.
 
 
 ---
