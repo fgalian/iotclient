@@ -48,17 +48,17 @@ Para iniciar la actualización manualmente, también puede enviarse un comando d
 
 ## HARDWARE A1
 ```
-updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-PROTOA1-MED-0.8.11.bin"}
+updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-PROTOA1-MED-0.8.14.bin"}
 ```
 
 ## HARDWARE A2 Medidores
 ```
-updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-A2-MED-0.8.11.bin"}
+updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-A2-MED-0.8.14.bin"}
 ```
 
 ## HARDWARE A3 Medidores
 ```
-updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-A3-MED-0.8.11.bin"}
+updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-A3-MED-0.8.14.bin"}
 ```
 
 
@@ -95,7 +95,7 @@ La siguiente tabla muestra la compatibilidad entre las versiones actuales de **f
 | Firmware ↓ / Hardware → | PROTO A1 | A2 | A3 |
 |-------------------------|:--------:|:--:|:--:|
 | **FW-0.4.4 y anteriores** | [✅](firmware/) | ❌ | ❌ |
-| **FW-Ax-MED** | [✅](firmware/FW-PROTOA1-MED-0.8.11.bin) | [✅](firmware/FW-A2-MED-0.8.11.bin) | [✅](firmware/FW-A3-MED-0.8.11.bin) |
+| **FW-Ax-MED** | [✅](firmware/FW-PROTOA1-MED-0.8.14.bin) | [✅](firmware/FW-A2-MED-0.8.14.bin) | [✅](firmware/FW-A3-MED-0.8.14.bin) |
 | **FW-Ax-NFC** | ❌ | [✅](firmware/FW-A2-NFC-0.6.7.bin) | [✅](firmware/FW-A3-NFC-0.6.7.bin) |
 ---
 
@@ -111,7 +111,7 @@ La siguiente tabla muestra la compatibilidad entre las versiones actuales de **f
 
 
 💡 **Recomendación:**  
-Utilice siempre la versión de firmware más reciente de su gama para garantizar el mejor rendimiento, compatibilidad y soporte técnico: **FW-0.8.11** en medidores (MED) y **FW-0.6.7** en equipos NFC.
+Utilice siempre la versión de firmware más reciente de su gama para garantizar el mejor rendimiento, compatibilidad y soporte técnico: **FW-0.8.14** en medidores (MED) y **FW-0.6.7** en equipos NFC.
 
 
 ---

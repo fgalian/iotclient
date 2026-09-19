@@ -1,4 +1,23 @@
 Volver al [principio](../README.md)
+**RELEASE 0.8.14**
+Bluetooth:
+  - El firmware pasa ahora BT_NAME/BT_USER/BT_PASS a la librería BTesp32
+    mediante BTesp32_setCredentials() en setup(), antes de crear btTask.
+    Hasta ahora las credenciales cargadas de NVS (CONFIG/btUser/btPass) no
+    llegaban a la librería y la autenticación BLE usaba siempre admin/admin.
+  - Nuevo nombre BLE configurable: CONFIG/btName en NVS (fallback
+    "FGSoftware", máx. 23 caracteres, protección contra nombre vacío).
+    
+Identidad del gateway:
+  - Nueva initClientId(): usa CONFIG/nombre de NVS si existe y es válido
+    (no vacío, máx. 31 caracteres, ASCII imprimible sin espacios); en caso
+    contrario fallback al ID de hardware FGW-<MAC efuse>, como hasta ahora.
+  - Se aplica como clientId MQTT, deviceName en aprovisionamiento y
+    LECTORID_1 por defecto del lector RFID. Requiere reinicio.
+
+**RELEASES 0.8.12 y 0.8.13**
+No son públicas, son solo adaptaciones para fusionar proyectos
+
 **RELEASE 0.8.11**
 Reparación lectura medidor trifásico DDS6619.
 
