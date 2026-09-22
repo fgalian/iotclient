@@ -1,4 +1,145 @@
 Volver al [principio](../README.md)
+
+RELEASE 0.8.17
+==============
+fix(sensores): validar el id en setSensor/getSensor/deleteSensor
+
+PROBLEMA
+Los comandos de sensor convertian el campo "id" a uint8_t sin validar:
+- setSensor con un id mayor o igual que CONFIG/numSensores (p. ej.
+  {"id":12} con numSensores=8) creaba un sensor "fantasma": se leia en
+  el bus 485, se anunciaba en ThingsBoard como hijo del gateway y
+  dejaba claves NOMBRE_x/ACTIVO_x huerfanas en NVS. Ademas respondia
+  success:true pese a que el sensor desaparecia al reiniciar (el
+  arranque solo crea 0..numSensores-1).
+- "id": 300 pasaba silenciosamente a ser 44 y podia pisar un medidor
+  real; "id": -1 pasaba a ser 255; "id": null y "id": "12" caian en 0
+  o en basura.
+- getSensor y deleteSensor tenian los mismos huecos; deleteSensor con
+  id=300 habria borrado el sensor 44.
+
+SOLUCION
+- Nuevo validador idSensorValido(): solo enteros en el rango
+  0..numSensores-1; rechaza NaN/inf, decimales no enteros, negativos y
+  el modo lector (numSensores=0). Acepta enteros en formato decimal
+  (p. ej. 12.0) por tolerancia con clientes que serializan asi.
+- Nueva extraerIdSensor(): valida el campo "id" del JSON y escribe la
+  respuesta de error ANTES de tocar el vector de sensores o el mutex.
+  Aplicada a los tres comandos en medidores (tope runtime
+  CONFIG/numSensores) y en nfc (tope de compilacion NUM_SENSORES).
+- El mensaje de error indica el rango y como dar de alta un medidor
+  nuevo: subir CONFIG/numSensores con setNVS y reiniciar el equipo.
+
+OTROS CAMBIOS DE LA VERSION
+- Sensor.cpp: MAX_TRY de lectura Modbus 3 -> 2 y DEBUG_WAIT sin \n.
+- modbus.cpp: FALLOS_PARA_CEDER_BUS 3 -> 1 (ceder el mutex en el primer
+  fallo de lectura para desbloquear antes a publish/comandos).
+- modbus.h: pin RELE1 (GPIO 47) para la placa A2.
+- analisis_conectividad.txt: doc sincronizada con los 2 intentos.
+
+VERIFICADO
+- Tests unitarios: 34/34 (6 nuevos para idSensorValido).
+- build.sh A2 NO NO: compila y firma (FW-A2-MED-0.8.17.bin).
+- nfc verificado compilando una copia temporal: el build.sh de nfc
+  falla por un motivo previo ajeno a este cambio (la libreria BTesp32
+  incluye bootLog.h, que solo existe en el sketch de medidores).
+
+
+**RELEASE 0.8.16**
+PROBLEMA
+NimBLEDevice::deinit(true) no devuelve al heap la memoria del controlador
+Bluetooth (~40-50 KB): en la build de Arduino (nimconfig.h define
+USING_NIMBLE_ARDUINO_HEADERS) el bloque de esp_nimble_hci_and_controller_deinit()
+de NimBLE-Arduino 2.5.1 (NimBLEDevice.cpp:1042-1049) no llega a compilarse, y
+nadie llama a esp_bt_controller_mem_release(ESP_BT_MODE_BTDM), la única llamada
+que devuelve el gran bloque del controlador. El pool de Classic BT sí se libera,
+pero solo dentro de NimBLEDevice::init() (línea 918).
+
+Esa memoria retenida desde el arranque era la causa de fondo de la "lotería"
+de las OTA en la flota: el handshake TLS necesita dos bloques contiguos de
+~17.4 KB (13 + IN/OUT_PAYLOAD_LEN de mbedtls) y con el controlador reteniendo
+su memoria el bloquemayor se quedaba en 15.9-40.9 KB, bajo el umbral práctico
+de ~35 KB.
+
+SOLUCIÓN
+En el kill-path de btTask (bluetoothTaskActiva == false), tras el
+NimBLEDevice::deinit(true), secuencia completa de apagado del controlador:
+
+    esp_bt_controller_disable();
+    esp_bt_controller_deinit();
+    esp_bt_controller_mem_release(ESP_BT_MODE_BTDM);
+
+más el #include <esp_bt.h> necesario.
+
+COMPATIBILIDAD
+Sin cambio de comportamiento: BLE se usa solo durante el arranque
+(provisionado) y ya hoy queda inutilizable tras la muerte (la tarea se borra
+con vTaskDelete y bluetoothTaskActiva nunca vuelve a true sin reiniciar).
+El re-provisionado no cambia (ocurre en un boot fresco, antes del kill).
+El heap gana el bloque del controlador: bloquemayor esperado de ~69 KB a
+~100-120 KB.
+
+VERIFICADO
+- Compila A2: FW-A2-MED-0.8.16.bin firmado (SHA256 29ea5da7...), 69% flash,
+  18% RAM.
+- Tests nativos de medidores: 26/26 PASSED.
+- Copia de ~/Arduino/libraries/BTesp32 sincronizada (diff vacío entre copias).
+
+**RELEASE 0.8.15**
+    Fusión completa de las funcionalidades del proyecto nfc en modo lector
+    (numSensores=0) y utilidades del gateway. Paridad funcional con nfc 0.6.8.
+
+    Se mantendrá la versión 0.6.8 por compatibilidad hasta que se salte a
+    la versión 0.9
+
+    pushTarjeta (portado del nfc):
+  - Nuevo RPC pushTarjeta / doPushTarjeta(): inyecta manualmente en rfidQueue
+    el UID de una tarjeta, como si la hubiera leído el lector RS-485.
+  - Solo funciona en modo lector (numSensores=0); en modo medidor la cola no
+    existe y el comando se ignora con log de error.
+  - El UID no se valida como ASCII HEX: se encola tal cual, igual que nfc.
+
+    setRele (portado del nfc):
+  - Nuevo RPC setRele {"id":1|2,"seq":[ms,...]}: secuencia de pulsos ON/OFF
+    sobre el relé de una puerta, bloqueante, dejando el relé apagado al final.
+  - Pines RELE1 16 / RELE2 17 definidos en modbus.h para la placa A2 y
+    inicializados en setup() (pinMode OUTPUT, estado inicial LOW).
+  - En placas sin relés (A3/PROTOA1) el comando responde con error en lugar de
+    compilar pines inexistentes (16/17 colisionan con el RS485 de esas placas).
+
+    setCodigo (portado del nfc):
+  - Nuevo RPC setCodigo {"reset":"...","open":"..."}: guarda los códigos de la
+    tarjeta maestra en CONFIG/reset y CONFIG/open.
+  - Defectos idénticos al nfc: reset="21121982", open="22121982".
+  - Los códigos nuevos se aplican tras reiniciar (el lector los carga al
+    arrancar la tarea del bus), igual que en el nfc.
+
+    Tarjeta maestra en modo lector (portado del nfc):
+  - 3 lecturas seguidas del código de reset → doResetConfig() (reset de
+    fábrica). 3 lecturas seguidas del código de apertura → pulso de relé de
+    2 s (RELE1) mediante setRele.
+  - Los códigos los carga leerbus485RfidTask() al arrancar desde
+    CONFIG/reset y CONFIG/open y se publican en el log de arranque.
+  - La tarjeta maestra además se publica como tarjeta normal, mismo orden
+      que en el nfc.
+ 
+    lectorId en Sensor (paridad con nfc):
+  - Nuevo miembro lectorId[32] persistido en sensores/LECTORID_%d.
+  - getSensor devuelve "lector" y setSensor acepta "lector".
+  - deleteSensor limpia ahora también LECTORID_%d (bug heredado del nfc).
+
+    Tests:
+  - Nuevo tests/unit/test_tarjeta_maestra.cpp (6 tests): racha de 3 lecturas,
+    reinicio de contador con tarjeta distinta, independencia de contadores,
+    código de apertura, UIDs nulos/vacíos y defaults del nfc.
+  - Portabilidad Linux de la suite: shim de strncpy_s/_TRUNCATE en
+    FakeNVS.h (API de Microsoft ausente en glibc) y cmath/std:: en
+    test_validaciones_reales.cpp. Suite completa en verde: 26/26.
+
+    Validación: compilación OK en A2, A3 y PROTOA1
+    (FW-A2-MED-0.8.15.bin, FW-A3-MED-0.8.15.bin, FW-PROTOA1-MED-0.8.15.bin).
+
+
 **RELEASE 0.8.14**
 Bluetooth:
   - El firmware pasa ahora BT_NAME/BT_USER/BT_PASS a la librería BTesp32

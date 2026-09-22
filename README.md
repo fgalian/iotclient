@@ -21,7 +21,7 @@ El firmware se distribuye al cliente final, quien se conecta directamente a la p
 
 
 ## 🔄 Cómo actualizar su dispositivo
-El sistema ThinkSIoT permite mantener su dispositivo siempre al día mediante un mecanismo de **actualización de firmware remota (OTA, Over-The-Air)**.  
+El sistema ThinksIoT permite mantener su dispositivo siempre al día mediante un mecanismo de **actualización de firmware remota (OTA, Over-The-Air)**.  
 Este proceso garantiza que su equipo disponga de las **últimas mejoras, correcciones de seguridad y nuevas funcionalidades** sin necesidad de conectarlo físicamente al ordenador.
 
 ---
@@ -41,38 +41,33 @@ Las actualizaciones pueden incluir:
 
 ## ⚙️ Cómo realizar la actualización
 
-La actualización se realiza desde el **Panel de Control de ThinkSIoT**, en el apartado de gestión de dispositivos.  
+La actualización se realiza desde el **Panel de Control de ThinksIoT**, en el apartado de gestión de dispositivos.  
 Dentro de la ficha del equipo encontrará la opción **“Actualizar Firmware”**, que permite ejecutar remotamente el proceso OTA.
 
 Para iniciar la actualización manualmente, también puede enviarse un comando desde la consola o desde la propia plataforma con la siguiente sintaxis:
 
-## HARDWARE A1
+## HARDWARE PROTO A1
 ```
-updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-PROTOA1-MED-0.8.14.bin"}
-```
-
-## HARDWARE A2 Medidores
-```
-updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-A2-MED-0.8.14.bin"}
+updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-PROTOA1-0.8.18.bin"}
 ```
 
-## HARDWARE A3 Medidores
+## HARDWARE A2
 ```
-updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-A3-MED-0.8.14.bin"}
+updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-A2-0.8.18.bin"}
 ```
 
+## HARDWARE A3
+```
+updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-A3-0.8.18.bin"}
+```
 
-## HARDWARE A2 NFC
-```
-updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-A2-NFC-0.6.7.bin"}
-```
 
 
 > 💡 **Nota:**  
 > - El campo `version` debe contener la **URL directa** al archivo `.bin` del firmware que desea instalar.  
 > - El dispositivo descargará el archivo, verificará su integridad y procederá automáticamente con la instalación.  
 > - Durante el proceso, el dispositivo se **reiniciará** para aplicar los cambios.
-> - Las versiones más antiguas se irán retirando. En este caso se han retirado las versiones anteriores a la 0.6.0
+> - Las versiones más antiguas se irán retirando. En este caso se han retirado las versiones anteriores a la 0.8.10
 
 
 ## ✅ Recomendaciones antes de actualizar
@@ -80,10 +75,10 @@ updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/m
 - No interrumpa la alimentación eléctrica durante el proceso.  
 - Verifique que la versión que va a instalar sea **compatible con su modelo de dispositivo**.
 
-Una vez completada la actualización, el dispositivo reiniciará automáticamente y se reconectará a la plataforma ThinkSIoT con la nueva versión activa.
+Una vez completada la actualización, el dispositivo reiniciará automáticamente y se reconectará a la plataforma ThinksIoT con la nueva versión activa.
 
 ## Versiones de firmware disponibles
-Firmware [Todo el firmware disponible](firmware/RELEASES.md) para más detalles.  
+[Todo el firmware disponible](firmware/RELEASES.md) para más detalles.  
 
 ---
 
@@ -95,8 +90,7 @@ La siguiente tabla muestra la compatibilidad entre las versiones actuales de **f
 | Firmware ↓ / Hardware → | PROTO A1 | A2 | A3 |
 |-------------------------|:--------:|:--:|:--:|
 | **FW-0.4.4 y anteriores** | [✅](firmware/) | ❌ | ❌ |
-| **FW-Ax-MED** | [✅](firmware/FW-PROTOA1-MED-0.8.14.bin) | [✅](firmware/FW-A2-MED-0.8.14.bin) | [✅](firmware/FW-A3-MED-0.8.14.bin) |
-| **FW-Ax-NFC** | ❌ | [✅](firmware/FW-A2-NFC-0.6.7.bin) | [✅](firmware/FW-A3-NFC-0.6.7.bin) |
+| **FW-Ax-** | [✅](firmware/FW-PROTOA1-0.8.18.bin) | [✅](firmware/FW-A2-0.8.18.bin) | [✅](firmware/FW-A3-0.8.18.bin) |
 ---
 
 ### 🔎 Leyenda
@@ -111,7 +105,7 @@ La siguiente tabla muestra la compatibilidad entre las versiones actuales de **f
 
 
 💡 **Recomendación:**  
-Utilice siempre la versión de firmware más reciente de su gama para garantizar el mejor rendimiento, compatibilidad y soporte técnico: **FW-0.8.14** en medidores (MED) y **FW-0.6.7** en equipos NFC.
+Utilice siempre la versión de firmware más reciente de su gama para garantizar el mejor rendimiento, compatibilidad y soporte técnico: **FW-0.8.18**.
 
 
 ---

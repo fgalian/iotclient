@@ -1,9 +1,9 @@
 # 🎉 ¡Felicidades por la adquisición de su nuevo dispositivo!
 
-Le damos la **bienvenida al ecosistema ThinkSIoT**.  
+Le damos la **bienvenida al ecosistema ThinksIoT**.  
 Gracias por confiar en nuestra tecnología y adquirir su **nuevo dispositivo inteligente IoT basado en ESP32**.
 
-Este equipo le permitirá **conectarse fácilmente a la plataforma ThinkSIoT**, monitorizar en tiempo real sus instalaciones, recibir alertas automáticas,  optimizar el consumo energético o la gestión de sus sistemas.
+Este equipo le permitirá **conectarse fácilmente a la plataforma ThinksIoT**, monitorizar en tiempo real sus instalaciones, recibir alertas automáticas,  optimizar el consumo energético o la gestión de sus sistemas.
 
 ## 🚀 Lo que su dispositivo puede hacer
 - **Conectividad segura y estable** mediante Wi-Fi y protocolos estándar (MQTT, HTTP, CoAP).  
@@ -15,7 +15,7 @@ Este equipo le permitirá **conectarse fácilmente a la plataforma ThinkSIoT**, 
 1. Conecte su dispositivo a la corriente.
 2. Configure la conexión Wi-Fi usando la [Webapp](webapp.md).  
 3. Espere unos segundos mientras el dispositivo se conecta automáticamente a la plataforma.  
-4. Acceda a su panel ThinkSIoT para comenzar a ver los datos en tiempo real.
+4. Acceda a su panel ThinksIoT para comenzar a ver los datos en tiempo real.
 
 ## 🧠 Consejo útil
 Si es su primera instalación, asegúrese de tener a mano:

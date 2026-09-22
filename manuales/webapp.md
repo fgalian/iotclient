@@ -1,4 +1,4 @@
-# 🌐 Guía de uso de la WebApp ThinkSIoT Instaladores
+# 🌐 Guía de uso de la WebApp ThinksIoT Instaladores
 
 La **WebApp** le permite configurar su dispositivo IoT de forma rápida y sencilla, directamente desde su teléfono móvil mediante **Bluetooth**.
 
@@ -115,7 +115,7 @@ Una vez introducido el SSID y confirmado el cuadro de diálogo, se solicitará l
 Introduzca la contraseña correspondiente y pulse **Aceptar** para completar el proceso.  
 Si los datos son correctos, el dispositivo guardará la configuración y deberá **reiniciarse** para aplicarla. Según la versión de firmware, el reinicio se realiza automáticamente o se solicita de forma manual (por ejemplo, con el botón **REBOOT** de la consola). Durante el reinicio se perderá la conexión Bluetooth: es un comportamiento esperado.
 
-Una vez reiniciado, el equipo se conectará a la red seleccionada y quedará vinculado a la plataforma ThinkSIoT.
+Una vez reiniciado, el equipo se conectará a la red seleccionada y quedará vinculado a la plataforma ThinksIoT.
 
 ---
 
@@ -153,7 +153,7 @@ Donde:
 ---
 
 ## ✅ 7. Conexión completada
-Tras el reinicio, el dispositivo se conectará automáticamente a la red Wi-Fi configurada y, en pocos segundos, aparecerá **conectado a la plataforma ThinkSIoT**.
+Tras el reinicio, el dispositivo se conectará automáticamente a la red Wi-Fi configurada y, en pocos segundos, aparecerá **conectado a la plataforma ThinksIoT**.
 
 Si el equipo no se hubiera reiniciado todavía, hágalo manualmente (por ejemplo, con el botón **REBOOT** de la consola) para aplicar la configuración.
 
