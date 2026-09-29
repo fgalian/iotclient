@@ -48,17 +48,17 @@ Para iniciar la actualización manualmente, también puede enviarse un comando d
 
 ## HARDWARE PROTO A1
 ```
-updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-PROTOA1-0.8.18.bin"}
+updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-PROTOA1-0.9.2.bin"}
 ```
 
 ## HARDWARE A2
 ```
-updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-A2-0.8.18.bin"}
+updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-A2-0.9.2.bin"}
 ```
 
 ## HARDWARE A3
 ```
-updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-A3-0.8.18.bin"}
+updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/main/firmware/FW-A3-0.9.2.bin"}
 ```
 
 
@@ -67,7 +67,7 @@ updateFirmware {"version":"https://github.com/fgalian/iotclient/raw/refs/heads/m
 > - El campo `version` debe contener la **URL directa** al archivo `.bin` del firmware que desea instalar.  
 > - El dispositivo descargará el archivo, verificará su integridad y procederá automáticamente con la instalación.  
 > - Durante el proceso, el dispositivo se **reiniciará** para aplicar los cambios.
-> - Las versiones más antiguas se irán retirando. En este caso se han retirado las versiones anteriores a la 0.8.10
+> - Las versiones más antiguas se irán retirando. En este caso se han retirado las versiones anteriores a la 0.8.19
 
 
 ## ✅ Recomendaciones antes de actualizar
@@ -90,7 +90,7 @@ La siguiente tabla muestra la compatibilidad entre las versiones actuales de **f
 | Firmware ↓ / Hardware → | PROTO A1 | A2 | A3 |
 |-------------------------|:--------:|:--:|:--:|
 | **FW-0.4.4 y anteriores** | [✅](firmware/) | ❌ | ❌ |
-| **FW-Ax-** | [✅](firmware/FW-PROTOA1-0.8.18.bin) | [✅](firmware/FW-A2-0.8.18.bin) | [✅](firmware/FW-A3-0.8.18.bin) |
+| **FW-Ax-** | [✅](firmware/FW-PROTOA1-0.9.2.bin) | [✅](firmware/FW-A2-0.9.2.bin) | [✅](firmware/FW-A3-0.9.2.bin) |
 ---
 
 ### 🔎 Leyenda

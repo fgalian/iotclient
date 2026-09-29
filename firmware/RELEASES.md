@@ -1,8 +1,48 @@
 Volver al [principio](../README.md)
 
-RELEASE 0.8.17
-==============
-fix(sensores): validar el id en setSensor/getSensor/deleteSensor
+
+**RELEASE 0.9.2**  
+
+- Identidad única del gateway en los tres canales: un solo nombre definido en un único sitio (`CONFIG/nombre` en NVS, con fallback `FGW-<MAC efuse>`), usado como clientId MQTT, como nombre Bluetooth y como hostname WiFi.
+- Nombre visible en el router: el nombre se anuncia por DHCP (opción 12) saneado a caracteres válidos de hostname; la lista de clientes del router muestra `CONFIG/nombre` (o `FGW-<MAC>`) en lugar del `esp32-XXXXXX` por defecto.
+- Nombre BLE unificado: el nombre Bluetooth pasa a ser el mismo `CLIENT_ID`; la clave `CONFIG/btName` queda eliminada junto con su buffer duplicado (24 bytes de RAM ahorrados). Requiere reinicio para aplicarse (NimBLE no admite renombrado en caliente).
+- Documentación de la API regenerada: `API_0.9.0.txt` sustituida por `API_0.9.2.txt`, sincronizada con el firmware y con las discrepancias corregidas (setURL borra el token, fallback MQTT a los 25 intentos, aprovisionamiento fallido no reinicia, rollback OTA real, campos nuevos de setSensor/getSensor, errores no documentados, límites de payload y tiempos).
+
+
+**RELEASE 0.9.1**  
+
+- Vigilante de reconexión WiFi: si la WiFi se cae más de 10 segundos, el firmware fuerza reconexiones manuales cada 10 segundos (el autoReconnect del core no reintenta ante todos los motivos de desconexión ni en el caso "asociado sin IP"), evitando que el equipo quede offline hasta un apagón físico.
+- Registro de motivos de caída en el bootLog: cada desconexión WiFi se registra con su motivo y canal (limitado a cambios de motivo o 60 s para no desgastar la flash), facilitando el diagnóstico en campo.
+
+
+**RELEASE Versión 0.9.0**  
+
+- Refactorización completa del sistema de sensores (arquitectura orientada a objetos):
+  - Clase base `SensorBase` con métodos polimórficos, de la que heredan `SensorEnergia` (medidores) y `SensorNfc` (lectores).
+  - Factoría `crearSensor()` que instanciara la clase correcta según el tipo.
+  - Gestión por punteros inteligentes (`unique_ptr`) y módulos propios para energía y NFC.
+- Cambio de tipo de sensor en caliente: si un sensor cambia de familia (medidor ↔ lector NFC), el objeto se recrea automáticamente con la clase correcta, sin reiniciar.
+- Payload de telemetría por tipo: el lector NFC ya no hereda los campos de energía (V, I, W, eT...) que no le aplican; cada tipo publica solo sus campos.
+- Configuración NVS del lector NFC en ambos modos: el código de apertura y la identidad del lector (`sensores/NOMBRE_1`, `sensores/LECTORID_1`) se cargan al arrancar también en modo medidor.
+- UID fuera de la telemetría periódica: el uid del NFC viaja únicamente en el evento puntual de tarjeta (sección 5.1 de la API), no en el sondeo.
+- Filtro de registro vacío ampliado: se descartan tanto el patrón todo-ceros como el todo-F (los dos patrones habituales de lectores que borran el registro al leerlo).
+
+
+**RELEASE 0.8.20**  
+
+- Nuevo lector NFC Modbus (tipo 6, plantilla "NFC"): el UID se lee de 4 registros holding y se publica como una cadena HEX en el evento puntual de tarjeta. Recomendación de instalación: los lectores NFC se asignan a los IDs Modbus más bajos del bus (se sondean al principio de cada ciclo).
+- Plantillas Modbus declarativas: los campos de cada tipo de medidor se interpretan de forma declarativa (formato del dato y orden de palabras MSW/LSW), lo que facilita añadir modelos nuevos.
+- Tarjeta maestra de apertura configurable: el código se consulta y modifica con getNVS/setNVS (`CONFIG/open`, por defecto 22121982). La activación exige 3 lecturas del código en menos de 15 segundos. Eliminados el comando `setCodigo` y el reset de fábrica por tarjeta (ninguna tarjeta puede resetear el equipo; el reset solo con `resetConfig`).
+- pushTarjeta también en modo medidor: permite inyectar tarjetas de prueba por RPC/Telnet/Bluetooth en ambos modos.
+- Tabla de tipos actualizada a 7 medidores (índices 0-6): DDS238, DDS238R, KWS303L, DDS6619, DDS665, DDS6619_3F y NFC.
+
+
+**RELEASE 0.8.18**  
+- Fin de la fusión de ambos proyectos. RC 1.
+
+
+**RELEASE 0.8.17**  
+validar el id en setSensor/getSensor/deleteSensor
 
 PROBLEMA
 Los comandos de sensor convertian el campo "id" a uint8_t sin validar:
@@ -45,7 +85,7 @@ VERIFICADO
   incluye bootLog.h, que solo existe en el sketch de medidores).
 
 
-**RELEASE 0.8.16**
+**RELEASE 0.8.16**  
 PROBLEMA
 NimBLEDevice::deinit(true) no devuelve al heap la memoria del controlador
 Bluetooth (~40-50 KB): en la build de Arduino (nimconfig.h define
@@ -85,7 +125,7 @@ VERIFICADO
 - Tests nativos de medidores: 26/26 PASSED.
 - Copia de ~/Arduino/libraries/BTesp32 sincronizada (diff vacío entre copias).
 
-**RELEASE 0.8.15**
+**RELEASE 0.8.15**  
     Fusión completa de las funcionalidades del proyecto nfc en modo lector
     (numSensores=0) y utilidades del gateway. Paridad funcional con nfc 0.6.8.
 
@@ -140,7 +180,7 @@ VERIFICADO
     (FW-A2-MED-0.8.15.bin, FW-A3-MED-0.8.15.bin, FW-PROTOA1-MED-0.8.15.bin).
 
 
-**RELEASE 0.8.14**
+**RELEASE 0.8.14**  
 Bluetooth:
   - El firmware pasa ahora BT_NAME/BT_USER/BT_PASS a la librería BTesp32
     mediante BTesp32_setCredentials() en setup(), antes de crear btTask.
@@ -156,16 +196,16 @@ Identidad del gateway:
   - Se aplica como clientId MQTT, deviceName en aprovisionamiento y
     LECTORID_1 por defecto del lector RFID. Requiere reinicio.
 
-**RELEASES 0.8.12 y 0.8.13**
+**RELEASES 0.8.12 y 0.8.13**  
 No son públicas, son solo adaptaciones para fusionar proyectos
 
-**RELEASE 0.8.11**
+**RELEASE 0.8.11**  
 Reparación lectura medidor trifásico DDS6619.
 
-**RELEASE 0.8.10**
+**RELEASE 0.8.10**  
 Se añade medidor trifásico DDS6619 pero no sale publicada.
 
-**RELEASE 0.8.9**
+**RELEASE 0.8.9**  
 Mejoras de conectividad, diagnóstico y recuperación automática
 
 - Se mejora la estabilidad durante el arranque y la conexión simultánea de Bluetooth y Wi-Fi.
@@ -191,7 +231,7 @@ Mejoras de conectividad, diagnóstico y recuperación automática
 
 
 **RELEASE 0.8.7 MED**
-Migrar BTesp32 de Bluedroid a NimBLE  
+- Migrar BTesp32 de Bluedroid a NimBLE  
 - Sustituir la pila Bluedroid por NimBLE-Arduino.
 - Mantener los UUID y el protocolo BLE existentes.
 - Conservar la autenticación y el manejador de comandos.
@@ -227,7 +267,6 @@ No abierta al público
 - Eliminar el parámetro de compilación para generar firmware sin firmar
 
 
-
 **RELEASE 0.8.4 MED**
 - Se corrige la recuperación inicial de tiempoLecturas y tiempoEnvios desde los atributos compartidos de ThingsBoard.
 - La petición de atributos utiliza ahora el formato sharedKeys esperado por ThingsBoard.
@@ -238,7 +277,6 @@ No abierta al público
 - setSensor permite guardar latitude y longitude, conjuntamente o por separado.
 - Se validan los rangos de latitud y longitud antes de escribirlos.
 - Las coordenadas se guardan en NVS mediante LAT_n y LON_n.
-
 
 
 **RELEASE 0.8.3 MED**
@@ -282,9 +320,9 @@ No abierta al público
 
 
 **RELEASE 0.8.1**
-Restaura la configuración de Serial2 de 8E1 a 8N1.
-Permite enviar las credenciales de aprovisionamiento durante la configuración inicial.
-La versión 0.8.0 no llega a publicarse por ser defectuosa.
+- Restaura la configuración de Serial2 de 8E1 a 8N1.
+- Permite enviar las credenciales de aprovisionamiento durante la configuración inicial.
+- La versión 0.8.0 no llega a publicarse por ser defectuosa.
 
 
 **RELEASE 0.7.7**
