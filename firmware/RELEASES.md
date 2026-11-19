@@ -1,6 +1,21 @@
 Volver al [principio](../README.md)
 
 
+**RELEASE 0.9.3**  
+
+- Coordenadas de los medidores como configuración local del gateway: `latitude` y `longitude` se fijan con `setSensor` y se persisten en NVS en el propio equipo (`SensorBase::setCoordenadas`), igual que el nombre y la E contratada. Se elimina la sincronización mediante atributos compartidos de ThingsBoard.
+- El anuncio de cada dispositivo hijo ya no publica `v1/gateway/attributes/request` solicitando `latitude`/`longitude`: solo se publica el `connect` (192 bytes menos por anuncio).
+- Se eliminan las suscripciones a `v1/gateway/attributes` y `v1/gateway/attributes/response`, la función `aplicarCoordenadasCompartidas()` y su rama del callback, junto con el `StaticJsonDocument<512>` asociado. `MqttState` pasa de 7 a 5 flags y `allSubscribed()` no puede quedarse esperando topics en desuso.
+- `getData` (cambio de contrato): `firmwareValido` pasa a `fwOK` y `objetosSensor` pasa a `objetos`.
+- `modbus.cpp`: solo comentarios. La explicación de `FALLOS_PARA_CEDER_BUS` remite a `MAX_TRY` (`Sensor.cpp`) en lugar de fijar "3 reintentos x 2 s"; el comportamiento no cambia.
+- Documentación: `API_0.9.2.txt` sustituida por `API_0.9.3.txt`, sincronizada con las coordenadas locales y el campo `objetos`.
+- Binarios publicados: `FW-PROTOA1-0.9.3.bin`, `FW-A2-0.9.3.bin` y `FW-A3-0.9.3.bin` (compatibles con PROTO A1, A2 y A3).
+
+CAMBIO INCOMPATIBLE
+- `getData` ya no publica `firmwareValido` ni `objetosSensor`: los dashboards, scripts y rule chains que lean las claves antiguas deben actualizarse a `fwOK` y `objetos`.
+- Las coordenadas de los dispositivos hijos ya no se aceptan por atributos compartidos de ThingsBoard: hay que enviarlas con `setSensor` (`latitude`/`longitude`).
+
+
 **RELEASE 0.9.2**  
 
 - Identidad única del gateway en los tres canales: un solo nombre definido en un único sitio (`CONFIG/nombre` en NVS, con fallback `FGW-<MAC efuse>`), usado como clientId MQTT, como nombre Bluetooth y como hostname WiFi.
